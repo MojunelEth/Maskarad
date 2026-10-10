@@ -1,0 +1,100 @@
+[
+  {
+    "id": "lavinia",
+    "name": "Lavinia",
+    "tagline": "Judges you over her glasses since 1974",
+    "seed": 41017,
+    "prompt": "a thin, stern woman in her fifties with a sleek champagne-blonde bob and heavy blunt bangs, small wire-rimmed reading glasses low on her nose, a lavender 1970s wool pantsuit with wide lapels and a huge pointed white collar, a burgundy paisley silk scarf tied at the neck, lavender heeled ankle boots",
+    "gesture": "Slowly lowers her glasses and stares over them",
+    "scenes": [
+      "Office kitchen: someone heats up fish in the microwave. Lower your glasses and stare until they leave",
+      "Read a terrible text message, pause, then look at the camera over your glasses",
+      "Inspect a friend’s outfit from head to toe and give one slow nod of disapproval"
+    ],
+    "caption": "Lavinia has a few notes 💜"
+  },
+  {
+    "id": "barry",
+    "name": "Barry Breeze",
+    "tagline": "Forty-six going on six",
+    "seed": 52044,
+    "prompt": "a stocky, cheerful man in his forties with a receding hairline, a huge ginger handlebar mustache and sideburns, a rainbow propeller beanie, rainbow suspenders over an open-collared white short-sleeve shirt, black shorts, a red fanny pack shaped like a grinning mouth, white tube socks with green stripes, black lace-up shoes",
+    "gesture": "Spins the propeller on his cap and gives a huge thumbs-up",
+    "scenes": [
+      "Supermarket: find the last bag of chips and celebrate like you just won the cup",
+      "Assemble flat-pack furniture, hold up one leftover screw and shrug proudly",
+      "A morning stretch in the yard that turns into a full victory dance"
+    ],
+    "caption": "Barry Breeze is ready for take-off 🌈"
+  },
+  {
+    "id": "nigel",
+    "name": "Nigel Sprout",
+    "tagline": "Has a meeting about the meeting",
+    "seed": 63071,
+    "prompt": "a lanky, pale man in his thirties with a long thin neck, a completely bald crown ringed by thick shoulder-length brown hair that puffs out to the sides, wide startled eyes, a bright green suit jacket with matching green tailored shorts, a white shirt and a dark green tie, dark green knee socks, brown leather brogues, holding a worn brown leather briefcase",
+    "gesture": "Hugs his briefcase to his chest and stares without blinking",
+    "scenes": [
+      "Someone at work says “quick question”: freeze, clutch your briefcase and slowly back out of the frame",
+      "Present a very serious chart to your cat, then wait for questions",
+      "Run for the bus, miss it, and pretend you were only jogging"
+    ],
+    "caption": "Nigel has concerns about the agenda 💼"
+  },
+  {
+    "id": "glenda",
+    "name": "Glenda Foyle",
+    "tagline": "Her rollers pick up three radio stations",
+    "seed": 74219,
+    "prompt": "a plump, curvy woman in her forties with a big curly auburn updo full of silver aluminium-foil hair rollers sticking out in every direction, a short blunt fringe, round lime-green ball earrings, a lilac blouse with puffed sleeves and a huge lime-green bow at the collar, wide orange culottes with cream polka dots, mismatched striped knee socks (one purple and cream, one green and cream), burgundy patent Mary Jane shoes, holding a small silver tin case",
+    "gesture": "Puffs out her cheeks and pats her foil rollers",
+    "scenes": [
+      "Answer the door in your rollers and act like you’re dressed for a gala",
+      "Turn your head slowly, like an antenna, until the neighbors’ gossip comes in loud and clear",
+      "Hear the price of something at the store and puff out your cheeks in shock"
+    ],
+    "caption": "Glenda heard everything 📡"
+  },
+  {
+    "id": "horace",
+    "name": "Horace Steeple",
+    "tagline": "His hair needs its own parking space",
+    "seed": 85133,
+    "prompt": "a stocky man in his fifties with grey hair piled into a tall pointed cone of tight round curls, a thick grey horseshoe mustache, heavy eyebrows, a lilac short-sleeve shirt with a rust-and-cream striped tie, charcoal-grey tailored shorts, white tube socks with two rust stripes, dark brown loafers, holding a black briefcase",
+    "gesture": "Raises one eyebrow and slowly smooths his mustache",
+    "scenes": [
+      "Duck under a doorway that’s far too low for your hair, with full dignity",
+      "Check a restaurant bill line by line, then look up at the camera, horrified",
+      "Try on a hat. Give up. Look at the camera"
+    ],
+    "caption": "Horace has checked the bill twice 🧾"
+  },
+  {
+    "id": "winston",
+    "name": "Winston Plank",
+    "tagline": "Turns sideways for every doorway",
+    "seed": 96457,
+    "prompt": "a tall, slim dark-skinned man in his thirties with a huge sculpted black hairdo: a tall flat-topped block rising straight up from his head and two long flat wings sticking far out to each side, a short blunt fringe, a thin pencil mustache, a pale peach short-sleeve shirt with a dark green tie, brown houndstooth tailored shorts, white tube socks with two green stripes, black loafers with a gold bar, holding a tan leather briefcase",
+    "gesture": "Turns sideways to fit through a doorway, then straightens his tie",
+    "scenes": [
+      "Walk through a narrow door sideways, very slowly, without losing your dignity",
+      "A pigeon lands on your hair: stay perfectly still and look at the camera",
+      "Wait for the elevator, see how small it is, and take the stairs"
+    ],
+    "caption": "Winston is coming through, sideways 📐"
+  },
+  {
+    "id": "mervyn",
+    "name": "Grandpa Mervyn",
+    "tagline": "Has seen it all and liked none of it",
+    "seed": 17389,
+    "prompt": "a heavyset man in his late seventies with thick swept-back white hair, a broad weathered face with age spots and a skeptical half-frown, a navy-blue knitted cardigan over a blue-and-white plaid flannel shirt, brown plaid wool trousers, dark brown leather shoes",
+    "gesture": "Tilts his head, narrows his eyes and says nothing",
+    "scenes": [
+      "Someone explains a new app to you: listen, nod slowly, and change nothing",
+      "Taste a fancy oat-milk latte and look at the camera like it betrayed you",
+      "Watch the neighbors park their car, badly, and shake your head for ten full seconds"
+    ],
+    "caption": "Grandpa Mervyn is not impressed ☕"
+  }
+]

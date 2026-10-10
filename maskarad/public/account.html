@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account — Masquerade</title>
+  <meta name="theme-color" content="#050506">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/inter-display-800.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/common.js" defer></script>
+  <script src="/account.js" defer></script>
+</head>
+<body data-page="account">
+  <div class="backdrop" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Masquerade, home">
+        <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+          <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+          <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+          <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+        </svg>
+        <span>Masquerade</span>
+      </a>
+      <nav class="tabs" aria-label="Sections">
+        <a href="/" data-tab="create">AI video</a>
+        <a href="/guide" data-tab="guide">Guide</a>
+        <a href="/account" data-tab="account">Account <span class="tab-badge" data-key-badge hidden>!</span></a>
+        <a href="/help" data-tab="help">Help</a>
+      </nav>
+      <div class="header-status" data-header-status></div>
+    </div>
+  </header>
+
+  <main class="page account">
+    <section id="guest" class="guest-hero" hidden>
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Account</p>
+      <h1>Your <em>studio</em> pass</h1>
+      <p class="lede">Sign in to make videos, create your own characters and see your clips. Getting started takes two steps: an account here and a fal.ai key for the AI.</p>
+      <div class="row-actions">
+        <button type="button" class="button button-bulb" id="registerButton">Create account</button>
+        <button type="button" class="button button-ghost" id="loginButton">Sign in</button>
+      </div>
+    </section>
+
+    <section id="member" hidden>
+      <div class="account-head">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Signed in</p>
+          <h1>Account</h1>
+        </div>
+        <p class="account-email"><span id="email"></span> <button type="button" class="link-button" id="logoutButton">Sign out</button></p>
+      </div>
+
+      <div class="key-card" id="keyCard">
+        <div class="key-card-main">
+          <p class="key-card-title" id="keyTitle"></p>
+          <p class="key-card-sub" id="keySub"></p>
+        </div>
+        <div class="key-card-actions">
+          <button type="button" class="button button-bulb" id="keyButton"></button>
+          <button type="button" class="link-button" id="keyDelete" hidden>Remove key</button>
+        </div>
+      </div>
+      <p class="key-card-links">
+        <a class="link-button" id="falBilling" href="https://fal.ai/dashboard/billing" target="_blank" rel="noopener">Balance and spending on fal.ai</a>
+        <a class="link-button" href="/guide#connect">How it works</a>
+      </p>
+
+      <section class="account-block" aria-labelledby="videosTitle">
+        <h2 id="videosTitle">My videos</h2>
+        <div class="list" id="videos"></div>
+      </section>
+
+      <section class="account-block" aria-labelledby="charsTitle">
+        <h2 id="charsTitle">My characters</h2>
+        <div class="my-characters" id="characters"></div>
+        <p><a class="link-button" href="/#new-character">Create a new character</a></p>
+      </section>
+
+      <section class="account-block" aria-labelledby="passwordTitle">
+        <h2 id="passwordTitle">Password</h2>
+        <form class="password-form" id="passwordForm" novalidate>
+          <div class="field">
+            <label for="currentPassword">Current password</label>
+            <input type="password" id="currentPassword" autocomplete="current-password">
+          </div>
+          <div class="field">
+            <label for="newPassword">New password, at least 8 characters</label>
+            <input type="password" id="newPassword" autocomplete="new-password">
+          </div>
+          <button type="submit" class="button button-ghost button-small">Change password</button>
+          <p class="helper" id="passwordStatus" aria-live="polite"></p>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="Masquerade, home">
+          <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+            <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+            <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+            <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+          </svg>
+          <span>Masquerade</span>
+        </a>
+        <p>All characters are fictional. Mark your videos as AI-generated when you post them. Don’t upload other people’s videos without the consent of everyone in them.</p>
+      </div>
+      <nav class="footer-links" aria-label="Documents">
+        <a href="/guide">Guide</a>
+        <a href="/help">Help</a>
+        <a href="/terms">Rules</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

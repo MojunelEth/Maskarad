@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy — Masquerade</title>
+  <meta name="theme-color" content="#050506">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/inter-display-800.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/common.js" defer></script>
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Masquerade, home">
+        <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+          <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+          <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+          <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+        </svg>
+        <span>Masquerade</span>
+      </a>
+      <nav class="tabs" aria-label="Sections">
+        <a href="/" data-tab="create">AI video</a>
+        <a href="/guide" data-tab="guide">Guide</a>
+        <a href="/account" data-tab="account">Account <span class="tab-badge" data-key-badge hidden>!</span></a>
+        <a href="/help" data-tab="help">Help</a>
+      </nav>
+      <div class="header-status" data-header-status></div>
+    </div>
+  </header>
+  <main class="page prose">
+    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Documents</p>
+    <h1>Privacy policy</h1>
+    <p>{{SITE_URL}} is run by {{OWNER_NAME}}. Contact: {{CONTACT}}.</p>
+
+    <h2>What data we receive</h2>
+    <ul>
+      <li>The video you upload. It may show your face, voice and surroundings.</li>
+      <li>Your account email and password. The password is stored only as a hash, and nobody can see it, including the administrator.</li>
+      <li>Your fal.ai key. It’s stored encrypted, never shown in full and used only for your own videos and characters.</li>
+      <li>Descriptions and images of your characters, your video history and your messages to support.</li>
+      <li>IP address and technical request data. They’re needed to keep the service running and to limit abuse.</li>
+    </ul>
+    <p>The site receives no payment data: you pay fal.ai directly.</p>
+
+    <h2>Why</h2>
+    <p>Only to create the videos and characters you request and to answer your messages. We don’t sell data and don’t use your videos to train AI models.</p>
+
+    <h2>Who receives the data</h2>
+    <p>To process videos and character descriptions, they are sent to fal.ai (USA), which runs the AI models, on behalf of your fal.ai account. This is necessary to provide the service.</p>
+
+    <h2>How long we keep it</h2>
+    <p>Uploaded videos are deleted right after processing, finished ones after about {{KEEP_HOURS}} hours. Your account, key, characters and messages are kept while the account exists. You can remove your key at any time on the Account tab.</p>
+
+    <h2>Your rights</h2>
+    <p>You can ask what data we hold about you, have it corrected, or have your account deleted. Write from the email you signed up with: {{CONTACT}}.</p>
+
+    <h2>Cookies</h2>
+    <p>The site doesn’t use advertising cookies. One technical cookie keeps you signed in.</p>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="Masquerade, home">
+          <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+            <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+            <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+            <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+          </svg>
+          <span>Masquerade</span>
+        </a>
+        <p>All characters are fictional. Mark your videos as AI-generated when you post them. Don’t upload other people’s videos without the consent of everyone in them.</p>
+      </div>
+      <nav class="footer-links" aria-label="Documents">
+        <a href="/guide">Guide</a>
+        <a href="/help">Help</a>
+        <a href="/terms">Rules</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

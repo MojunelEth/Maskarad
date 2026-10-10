@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rules — Masquerade</title>
+  <meta name="theme-color" content="#050506">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/inter-display-800.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/common.js" defer></script>
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Masquerade, home">
+        <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+          <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+          <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+          <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+        </svg>
+        <span>Masquerade</span>
+      </a>
+      <nav class="tabs" aria-label="Sections">
+        <a href="/" data-tab="create">AI video</a>
+        <a href="/guide" data-tab="guide">Guide</a>
+        <a href="/account" data-tab="account">Account <span class="tab-badge" data-key-badge hidden>!</span></a>
+        <a href="/help" data-tab="help">Help</a>
+      </nav>
+      <div class="header-status" data-header-status></div>
+    </div>
+  </header>
+  <main class="page prose">
+    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Documents</p>
+    <h1>Rules of the service</h1>
+    <p>By signing up on {{SITE_URL}}, you accept these rules. The site is run by {{OWNER_NAME}}.</p>
+
+    <h2>1. What this service is</h2>
+    <p>Masquerade is a free website that helps you make videos with AI characters. You upload your video, and the AI replaces the person in the frame with a fictional character while keeping the moves, expressions and sound. You can pick a ready-made character or have the AI draw one from a text description. Up to {{MAX_SECONDS}} seconds of video are processed; the rest is trimmed. Finished videos carry a note in their file metadata that they were made with AI.</p>
+    <p>The result is created by AI, so it may differ from what you expect. The site doesn’t guarantee that every video will be of the same quality.</p>
+
+    <h2>2. Who pays and for what</h2>
+    <p>The site doesn’t accept money. The AI runs on fal.ai and is paid from your own fal.ai account: you connect your fal.ai key, and fal.ai charges your balance at its own rates. Roughly, that’s {{VIDEO_PRICE}} per video up to {{MAX_SECONDS}} seconds and {{IMAGE_PRICE}} per custom character. Exact prices and your charge history are in your fal.ai dashboard.</p>
+    <p>Questions about charges and refunds are handled by fal.ai under its own rules. The site never receives your money and can’t refund it.</p>
+    <p>A ready-made character’s HD reference photo is prepared once and then shared with all users. If it doesn’t exist yet, it’s prepared before the first video with that character, using the key of whoever picked it, and the site warns about this in advance.</p>
+
+    <h2>3. Your fal.ai key</h2>
+    <p>Your key is stored on the site’s server in encrypted form and used only for your own videos and characters. You can remove it from the site on the Account tab and revoke it on fal.ai at any time. Don’t share your key with anyone.</p>
+
+    <h2>4. What you may upload</h2>
+    <p>You must be 18 or older to use the service. You may only upload videos of yourself or of people who agreed to it. Videos with children, sexual content or violence, and any material that breaks the law or someone else’s rights, are not allowed.</p>
+    <p>Custom characters may only be fictional adults: trying to get the likeness of real people, celebrities or other creators’ well-known characters is not allowed. You may not present the videos as footage of real events or real people, or use the videos for deception, fraud or harassment. When you post them, mark them as AI-generated wherever the platform asks you to.</p>
+
+    <h2>5. Rights to the videos</h2>
+    <p>You keep the rights to the video you upload. You may use the finished video for personal and commercial purposes. The site’s ready-made characters may be used in videos made through the site. Characters drawn from your own description are yours to use without restrictions.</p>
+
+    <h2>6. Storage</h2>
+    <p>Uploaded videos are deleted right after processing, finished ones after about {{KEEP_HOURS}} hours. Download your result while it’s available in your account.</p>
+
+    <h2>7. Responsibility</h2>
+    <p>You’re responsible for the content of the videos you upload and for how you use the results. The site may refuse to process videos that break these rules and may block an account after repeated violations. The site is provided “as is” and may be temporarily unavailable.</p>
+
+    <h2>8. Contact</h2>
+    <p>Questions are welcome here: {{CONTACT}}.</p>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="Masquerade, home">
+          <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+            <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+            <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+            <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+          </svg>
+          <span>Masquerade</span>
+        </a>
+        <p>All characters are fictional. Mark your videos as AI-generated when you post them. Don’t upload other people’s videos without the consent of everyone in them.</p>
+      </div>
+      <nav class="footer-links" aria-label="Documents">
+        <a href="/guide">Guide</a>
+        <a href="/help">Help</a>
+        <a href="/terms">Rules</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

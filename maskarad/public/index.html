@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masquerade: AI characters from your videos</title>
+  <meta name="description" content="Upload a short video and the AI replaces you with a character with an AI face. Your moves and expressions stay yours.">
+  <meta name="theme-color" content="#050506">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/inter-display-800.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/common.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body data-page="create">
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="demo-banner" id="demoBanner" hidden>
+    Demo mode: the AI isn’t called, the character’s picture is simply placed over your video.
+    To turn on real replacement, remove the PROVIDER=mock setting on the server.
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Masquerade, home">
+        <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+          <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+          <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+          <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+        </svg>
+        <span>Masquerade</span>
+      </a>
+      <nav class="tabs" aria-label="Sections">
+        <a href="/" data-tab="create">AI video</a>
+        <a href="/guide" data-tab="guide">Guide</a>
+        <a href="/account" data-tab="account">Account <span class="tab-badge" data-key-badge hidden>!</span></a>
+        <a href="/help" data-tab="help">Help</a>
+      </nav>
+      <div class="header-status" data-header-status></div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>AI character studio</p>
+      <h1>You act it out.<br><em>Your character</em> plays&nbsp;it.</h1>
+      <p class="lede">Upload a short video of yourself moving, talking or dancing. The AI replaces you with a character with an AI face, while your moves, expressions and voice stay yours.</p>
+      <ul class="hero-specs">
+        <li><span><b>Free</b> to use</span></li>
+        <li class="intro-note"><span>You pay fal.ai directly: about <b data-video-price>$1.20</b> per video. <a href="/guide#connect">How to connect</a></span></li>
+        <li><span>Up to <b data-max-seconds>10</b> seconds, 720p</span></li>
+      </ul>
+    </section>
+
+    <section class="studio" aria-label="Studio">
+      <div class="studio-media">
+        <div class="panel-head"><span class="step">01</span><h2>Your video</h2></div>
+        <div class="mirror" id="mirror" data-state="empty">
+          <div class="glass" id="dropzone">
+            <div class="glass-empty" id="emptyView">
+              <span class="drop-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4m0 0-4 4m4-4 4 4"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+              </span>
+              <p class="glass-title">Drop your video here</p>
+              <p class="glass-hint" id="limitsHint">Up to 10 seconds and 100 MB. If it’s longer, we’ll use the beginning.</p>
+              <label class="button button-ghost" for="fileInput">Choose a video</label>
+              <input type="file" id="fileInput" accept="video/*" class="visually-hidden">
+            </div>
+            <video id="preview" class="glass-video" playsinline muted loop hidden></video>
+            <video id="result" class="glass-video" playsinline controls loop hidden></video>
+            <div class="scan" aria-hidden="true"></div>
+            <div class="glass-progress" id="progressView" hidden>
+              <p class="progress-stage" id="progressStage" aria-live="polite">Uploading your video</p>
+              <p class="progress-time" id="progressTime"></p>
+            </div>
+          </div>
+          <div class="vf-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <div class="vf-hud" aria-hidden="true">
+            <span class="vf-label" id="vfLabel">Standby</span>
+            <span class="vf-spec" id="vfSpec">720p · 24 fps</span>
+          </div>
+          <div class="bulbs" id="bulbs" aria-hidden="true"></div>
+        </div>
+        <div class="mirror-actions" id="previewActions" hidden>
+          <span class="file-name" id="fileName"></span>
+          <label class="link-button" for="fileInput">Replace video</label>
+        </div>
+        <div class="mirror-actions result-actions" id="resultActions" hidden>
+          <a class="button button-bulb" id="downloadLink" href="#" download>Download video</a>
+          <button type="button" class="button button-ghost" id="againButton">Make another</button>
+          <p class="result-note" id="resultNote"></p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="panel-head"><span class="step">02</span><h2 id="castTitle">Who are you playing?</h2></div>
+        <div class="cast" id="cast" role="radiogroup" aria-labelledby="castTitle"></div>
+
+        <div class="panel-head"><span class="step">03</span><h2>Create</h2></div>
+        <form class="launch" id="launchForm" novalidate>
+          <div class="key-line" id="keyLine" hidden>
+            <p class="key-text" id="keyText"></p>
+            <button type="button" class="button button-ghost button-small" id="keyButton"></button>
+          </div>
+
+          <label class="check">
+            <input type="checkbox" id="consent">
+            <span>The video shows only me or people who agreed to it</span>
+          </label>
+
+          <button type="submit" class="button button-bulb button-wide" id="createButton">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5l2.2 6.3 6.3 2.2-6.3 2.2L12 19.5l-2.2-6.3L3.5 11l6.3-2.2z"/><path fill="currentColor" d="M19 15.5l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9z" opacity=".7"/></svg>
+            Create video
+          </button>
+          <p class="helper" id="helper" aria-live="polite"></p>
+          <div class="alert" id="alert" role="alert" hidden></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="howTitle">
+      <div class="section-head">
+        <h2 class="section-title" id="howTitle">How it works</h2>
+        <p class="section-sub">Three steps, a few minutes of waiting, and your character is on screen.</p>
+      </div>
+      <ol class="how-grid">
+        <li class="how-card" data-n="01">
+          <span class="step">01 · Film</span>
+          <h3>Film yourself</h3>
+          <p>5–10 seconds, one person in the frame, face and hands visible, even light and a phone that stands still.</p>
+        </li>
+        <li class="how-card" data-n="02">
+          <span class="step">02 · Cast</span>
+          <h3>Pick a character</h3>
+          <p>Take a ready-made one or describe your own: the AI draws a new face and look in about half a minute.</p>
+        </li>
+        <li class="how-card" data-n="03">
+          <span class="step">03 · Render</span>
+          <h3>Get your video</h3>
+          <p>Your moves, expressions and voice, played by the character. A clean file with no watermarks, ready to post.</p>
+        </li>
+      </ol>
+      <div class="how-foot">
+        <p>Want a whole page with your character? The guide covers filming a series, posting and growing it.</p>
+        <a class="arrow-link" href="/guide">Read the guide</a>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="dialog" id="charDialog" aria-labelledby="charTitle">
+    <form class="dialog-inner" id="charForm" novalidate>
+      <p class="step">New character</p>
+      <h2 id="charTitle">Your own character</h2>
+      <p class="dialog-note">Describe how a fictional adult looks. The AI will draw them full length, and they’ll appear in your list of characters. Faces of real people and celebrities aren’t allowed.</p>
+      <p class="dialog-note">Drawing a character costs about <span data-char-price>$0.08</span> from your fal.ai balance. If you want to keep your own outfit in the video, describe it: the AI transfers the whole character, clothes included.</p>
+      <div class="field">
+        <label for="charName">Name</label>
+        <input type="text" id="charName" maxlength="40" autocomplete="off" placeholder="For example, Captain Splash">
+      </div>
+      <div class="field">
+        <label for="charDesc">Look</label>
+        <textarea id="charDesc" rows="5" maxlength="600" placeholder="Age, hair, outfit and one or two memorable details"></textarea>
+      </div>
+      <button type="button" class="link-button" id="charExample">Use an example</button>
+      <button type="submit" class="button button-bulb button-wide" id="charSubmit">Draw character</button>
+      <p class="dialog-note" id="charStatus" aria-live="polite"></p>
+      <div class="alert" id="charAlert" role="alert" hidden></div>
+      <button type="button" class="link-button dialog-close" id="charClose">Close</button>
+    </form>
+  </dialog>
+
+  <dialog class="dialog dialog-sheet" id="sheetDialog" aria-labelledby="sheetTitle">
+    <div class="dialog-inner sheet-inner">
+      <img class="sheet-image" id="sheetImage" src="" alt="" width="1254" height="1254">
+      <div class="sheet-body">
+        <p class="step">Character sheet</p>
+        <h2 id="sheetTitle"></h2>
+        <p class="dialog-note" id="sheetTagline"></p>
+        <p class="sheet-gesture" id="sheetGesture"></p>
+        <p class="dialog-note">The AI transfers the whole look to your video: face, hair and outfit. Your moves, expressions and voice stay yours.</p>
+        <button type="button" class="button button-bulb" id="sheetChoose">Play this character</button>
+        <button type="button" class="link-button dialog-close" id="sheetClose">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="Masquerade, home">
+          <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+            <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+            <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+            <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+          </svg>
+          <span>Masquerade</span>
+        </a>
+        <p>All characters are fictional. Mark your videos as AI-generated when you post them. Don’t upload other people’s videos without the consent of everyone in them.</p>
+      </div>
+      <nav class="footer-links" aria-label="Documents">
+        <a href="/guide">Guide</a>
+        <a href="/help">Help</a>
+        <a href="/terms">Rules</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

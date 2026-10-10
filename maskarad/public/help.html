@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Help — Masquerade</title>
+  <meta name="theme-color" content="#050506">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/inter-display-800.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/common.js" defer></script>
+  <script src="/help.js" defer></script>
+</head>
+<body data-page="help">
+  <div class="backdrop" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Masquerade, home">
+        <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+          <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+          <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+          <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+        </svg>
+        <span>Masquerade</span>
+      </a>
+      <nav class="tabs" aria-label="Sections">
+        <a href="/" data-tab="create">AI video</a>
+        <a href="/guide" data-tab="guide">Guide</a>
+        <a href="/account" data-tab="account">Account <span class="tab-badge" data-key-badge hidden>!</span></a>
+        <a href="/help" data-tab="help">Help</a>
+      </nav>
+      <div class="header-status" data-header-status></div>
+    </div>
+  </header>
+
+  <main class="page help">
+    <section class="page-head">
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Help</p>
+      <h1>How can we <em>help?</em></h1>
+      <p class="lede">Answers to common questions. If your case isn’t here, write to us using the form at the bottom of the page.</p>
+    </section>
+
+    <section class="faq" aria-label="Common questions">
+      <details>
+        <summary>How much does it cost, and who do I pay?</summary>
+        <p>The site is free. Videos are made by the AI on fal.ai, and fal.ai charges your own fal.ai balance. This site never receives your money and adds nothing on top.</p>
+        <div class="table-wrap">
+          <table class="info-table">
+            <thead><tr><th>What</th><th>Approximate price</th><th>Who charges</th></tr></thead>
+            <tbody>
+              <tr><td>Video up to <span data-max-seconds>10</span> seconds</td><td><span data-video-price>$1.20</span></td><td>fal.ai</td></tr>
+              <tr><td>Your own character</td><td><span data-char-price>$0.08</span></td><td>fal.ai</td></tr>
+              <tr><td>Using this site</td><td>Free</td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+      <details>
+        <summary>Where do I get a fal.ai key?</summary>
+        <ol>
+          <li>Sign up on <a href="https://fal.ai/dashboard" target="_blank" rel="noopener">fal.ai</a>.</li>
+          <li>Add credit under <a href="https://fal.ai/dashboard/billing" target="_blank" rel="noopener">Billing</a>.</li>
+          <li>Under <a href="https://fal.ai/dashboard/keys" target="_blank" rel="noopener">Keys</a>, click Create Key and choose the API scope.</li>
+          <li>Copy the key right away: fal.ai shows it only once.</li>
+          <li>Paste it on the Account tab.</li>
+        </ol>
+        <p>Step-by-step details are in the <a href="/guide#connect">guide</a>.</p>
+      </details>
+      <details>
+        <summary>Is it safe to give the site my key?</summary>
+        <p>Your key is stored on the server encrypted, is never shown to anyone in full and is used only for your own videos and characters.</p>
+        <ul>
+          <li>Remove it from the site any time on the Account tab.</li>
+          <li>Revoke it completely on fal.ai under Keys.</li>
+          <li>For peace of mind, keep a small balance on fal.ai and top it up as needed.</li>
+        </ul>
+      </details>
+      <details id="faq-video">
+        <summary>My video didn’t work. What should I do?</summary>
+        <p>Read the error message under the button first.</p>
+        <ul>
+          <li><strong>It mentions your key or balance.</strong> Check the key on the Account tab and your balance on fal.ai.</li>
+          <li><strong>The AI couldn’t handle the video.</strong> Most often the cause is darkness or a window behind you, a shaky camera, a second person in the frame or a covered face. Reshoot using the tips in the <a href="/guide#filming">guide</a>.</li>
+          <li><strong>The fingers look strange.</strong> Hands are the hardest part for any AI video. Keep them inside the frame, move them a bit slower, take off gloves and upload the original file from your camera rather than a video re-downloaded from TikTok.</li>
+          <li><strong>The error keeps coming back.</strong> Write to us and include the video number from your account.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>fal.ai charged me, but the video failed</summary>
+        <p>All charges are made by fal.ai, and your spending history is under <a href="https://fal.ai/dashboard/billing" target="_blank" rel="noopener">Billing</a>. This site doesn’t receive your money and can’t refund it, so contact fal.ai support about charges. If the video broke because of the site, write to us too and we’ll look into it.</p>
+      </details>
+      <details>
+        <summary>How long is a finished video kept?</summary>
+        <p>About <span data-keep-hours>24</span> hours. During that time it’s on the Account tab, then it’s deleted from the server. Download your clip as soon as it’s ready.</p>
+      </details>
+      <details>
+        <summary>Can I upload a photo of my own face or a celebrity?</summary>
+        <p>No. The site only works with fictional characters: ready-made ones or ones the AI draws from your description. This prevents deepfakes of real people. You don’t need your own face anyway: your moves and expressions come from your video.</p>
+      </details>
+      <details>
+        <summary>How do I create my own character?</summary>
+        <p>On the AI video tab, click “Your own character” and describe the look: age, hair, outfit and one or two striking details. The AI draws the character in about half a minute.</p>
+        <p>The AI transfers the whole character, clothes included, so if you want to stay in your own outfit, describe it. You can keep up to <span data-max-chars>6</span> characters at a time.</p>
+      </details>
+      <details>
+        <summary>I forgot my password</summary>
+        <p>Write to us using the form below from the email you signed up with. We’ll send you a temporary password, which you can change on the Account tab. Your fal.ai key stays connected.</p>
+      </details>
+      <details>
+        <summary>Does the video have a watermark?</summary>
+        <p>No. The finished video has no visible labels or logos. Only the file’s metadata notes that it was made with AI. When you post it, turn on the platform’s AI-generated content setting: TikTok, Instagram and YouTube require it for realistic AI videos.</p>
+      </details>
+      <details>
+        <summary>What can’t I upload?</summary>
+        <p>Videos with children, with people who didn’t give consent, sexual or violent content, and anything that breaks the law. The full rules are on the <a href="/terms">Rules</a> page.</p>
+      </details>
+    </section>
+
+    <section class="contact" aria-labelledby="contactTitle">
+      <p class="step">Support</p>
+      <h2 id="contactTitle">Write to us</h2>
+      <form id="supportForm" novalidate>
+        <div class="field">
+          <label for="topic">Topic</label>
+          <select id="topic">
+            <option value="video">My video didn’t work</option>
+            <option value="falkey">fal.ai key and charges</option>
+            <option value="account">Account and password</option>
+            <option value="character">My own character</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="field" id="emailField">
+          <label for="supportEmail">Email for our reply</label>
+          <input type="email" id="supportEmail" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="message">What happened</label>
+          <textarea id="message" rows="6" maxlength="4000" placeholder="Describe what you did and what went wrong"></textarea>
+        </div>
+        <p class="helper" id="videoNote" hidden></p>
+        <button type="submit" class="button button-bulb">Send</button>
+        <p class="helper" id="supportStatus" aria-live="polite"></p>
+      </form>
+      <p class="contact-mail" id="ownerMail" hidden></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="Masquerade, home">
+          <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+            <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+            <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+            <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+          </svg>
+          <span>Masquerade</span>
+        </a>
+        <p>All characters are fictional. Mark your videos as AI-generated when you post them. Don’t upload other people’s videos without the consent of everyone in them.</p>
+      </div>
+      <nav class="footer-links" aria-label="Documents">
+        <a href="/guide">Guide</a>
+        <a href="/help">Help</a>
+        <a href="/terms">Rules</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guide — Masquerade</title>
+  <meta name="description" content="How to connect the AI and run an AI character page: character, filming, series, posting, metrics and earning.">
+  <meta name="theme-color" content="#050506">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/inter-display-800.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/common.js" defer></script>
+  <script src="/guide.js" defer></script>
+</head>
+<body data-page="guide">
+  <div class="backdrop" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Masquerade, home">
+        <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+          <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+          <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+          <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+        </svg>
+        <span>Masquerade</span>
+      </a>
+      <nav class="tabs" aria-label="Sections">
+        <a href="/" data-tab="create">AI video</a>
+        <a href="/guide" data-tab="guide">Guide</a>
+        <a href="/account" data-tab="account">Account <span class="tab-badge" data-key-badge hidden>!</span></a>
+        <a href="/help" data-tab="help">Help</a>
+      </nav>
+      <div class="header-status" data-header-status></div>
+    </div>
+  </header>
+
+  <main class="page guide">
+    <section class="hero">
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Guide</p>
+      <h1>How to run an <em>AI character</em> page</h1>
+      <p class="lede">Short videos with recognizable AI characters are among the most talked-about formats on social media right now. This guide covers the whole path, from the idea for a character to a series of videos and your first income. Everything you do by hand happens on the AI video tab.</p>
+    </section>
+
+    <div class="guide-layout">
+    <nav class="guide-toc" aria-label="Contents">
+      <p class="guide-toc-title">Contents</p>
+      <a href="#why">Why it works</a>
+      <a href="#connect">Setup</a>
+      <a href="#character">1. Character</a>
+      <a href="#filming">2. Filming</a>
+      <a href="#make">3. Video</a>
+      <a href="#series">4. Series</a>
+      <a href="#publish">5. Posting</a>
+      <a href="#numbers">6. Metrics</a>
+      <a href="#money">7. Earning</a>
+      <a href="#scenes">Ready scenes</a>
+      <a href="#mistakes">Troubleshooting</a>
+    </nav>
+
+    <div class="guide-content">
+
+    <section class="guide-block" id="why" aria-labelledby="whyTitle">
+      <h2 id="whyTitle">Why it works</h2>
+      <p>People scroll fast, and a video has less than a second to stop them. A character with a memorable look does that better than any headline, because viewers recognize them from the first frame.</p>
+      <p>When the same character repeats a signature gesture in a new everyday situation, each new video feels familiar before the joke even lands, and people start waiting for the next one.</p>
+      <p>This used to take an actor, makeup and costumes. Now a phone is enough: you act out the scene, and the AI replaces you with the character while keeping your moves, expressions and voice.</p>
+    </section>
+
+    <section class="guide-block" id="connect" aria-labelledby="connectTitle">
+      <h2 id="connectTitle">Setup: connect the AI</h2>
+      <p>The site is free. You pay for the AI yourself, directly to <a href="https://fal.ai" target="_blank" rel="noopener">fal.ai</a>, and the site never receives your money. You only set this up once, and it takes about five minutes.</p>
+      <h3>What it costs</h3>
+      <div class="table-wrap">
+        <table class="info-table">
+          <thead><tr><th>What</th><th>Approximate price</th><th>Who pays</th></tr></thead>
+          <tbody>
+            <tr><td>Video up to <span data-max-seconds>10</span> seconds</td><td><span data-video-price>$1.20</span></td><td>You, from your fal.ai balance</td></tr>
+            <tr><td>Your own character</td><td><span data-char-price>$0.08</span></td><td>You, from your fal.ai balance</td></tr>
+            <tr><td>The very first video with a ready-made character: the AI prepares its HD reference photo</td><td>+<span data-char-price>$0.08</span>, once for everyone</td><td>Whoever picks that character first</td></tr>
+            <tr><td>Using this site</td><td>Free</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Five steps</h3>
+      <ol class="steps-list">
+        <li><strong>Create an account here.</strong> Account tab → Create account: email and password.</li>
+        <li><strong>Sign up on fal.ai.</strong> Open <a href="https://fal.ai/dashboard" target="_blank" rel="noopener">fal.ai</a> and create an account. It’s free.</li>
+        <li><strong>Add credit.</strong> Open <a href="https://fal.ai/dashboard/billing" target="_blank" rel="noopener">Billing</a>. $10 is enough to start.</li>
+        <li><strong>Create a key.</strong> Open <a href="https://fal.ai/dashboard/keys" target="_blank" rel="noopener">Keys</a> → Create Key, give it any name, for example “Masquerade”, and choose the API scope. Copy the key right away: fal.ai shows it only once.</li>
+        <li><strong>Paste the key here.</strong> Account tab → Connect. The site checks right away that the key works.</li>
+      </ol>
+      <p class="note">Your key is stored encrypted and used only for your own videos. You can remove it on the Account tab or revoke it on fal.ai under Keys. Your spending is listed on fal.ai under Billing.</p>
+    </section>
+
+    <section class="guide-block" id="character" aria-labelledby="charTitle">
+      <h2 id="charTitle">1. Create your character</h2>
+      <p>Take a ready-made character or draw your own: on the AI video tab, click “Your own character” and describe the look. To see a ready-made character’s whole outfit from every side, click the arrows in the corner of their card. A good description of your own character has four parts.</p>
+      <div class="table-wrap">
+        <table class="info-table">
+          <thead><tr><th>Part</th><th>What to describe</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td>Age and type</td><td>Who this is at a glance</td><td>“A man in his forties”, “a lively retiree”</td></tr>
+            <tr><td>Hair and face</td><td>What you can see from a distance</td><td>Hair color and shape, beard, glasses</td></tr>
+            <tr><td>Outfit</td><td>One recognizable look for every video</td><td>A yellow raincoat over a sharp suit</td></tr>
+            <tr><td>Signature details</td><td>One or two things people remember</td><td>A huge umbrella, a gold whistle, turquoise sneakers</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="example-box">
+        <p class="example-title">Example description</p>
+        <p>A man in his forties with a perfectly groomed red beard, a bright yellow raincoat over a sharp suit, round glasses and a huge walking-stick umbrella.</p>
+      </div>
+      <p>Then give the character a personality in one sentence: who they are and what delights or annoys them. Also invent a <strong>signature gesture</strong>, one move they repeat in every video:</p>
+      <ul class="checklist">
+        <li>straightening a collar;</li>
+        <li>lowering sunglasses;</li>
+        <li>blowing a whistle.</li>
+      </ul>
+      <p class="note">The AI transfers the whole character, clothes included. If you want to stay in your own suit, describe that suit in the character’s look.</p>
+      <p>Don’t copy real people or other creators’ famous characters. Such accounts get banned after complaints, and the site won’t draw them anyway. Your own character is also worth more, because the rights are yours.</p>
+    </section>
+
+    <section class="guide-block" id="filming" aria-labelledby="filmTitle">
+      <h2 id="filmTitle">2. Film yourself</h2>
+      <p>The AI copies your moves, expressions and background and replaces only you. The cleaner the original video, the more alive the character looks.</p>
+      <div class="table-wrap">
+        <table class="info-table do-table">
+          <thead><tr><th>Do</th><th>Avoid</th></tr></thead>
+          <tbody>
+            <tr><td>Keep one person in the frame</td><td>A second person: the AI may replace the wrong one</td></tr>
+            <tr><td>Keep your face and hands visible</td><td>Masks, dark glasses, a cap over your eyes</td></tr>
+            <tr><td>Bare hands, kept inside the frame</td><td>Gloves and mittens, or hands at the very edge of the frame: the AI may draw extra or merged fingers</td></tr>
+            <tr><td>Move your hands smoothly, a bit slower than usual</td><td>Fast waving: the fingers turn into a blur</td></tr>
+            <tr><td>Face the light: a window in front or to the side</td><td>A window behind you: your face ends up in shadow</td></tr>
+            <tr><td>Put the phone on a shelf or lean it against something</td><td>A handheld, shaky camera: the character “floats”</td></tr>
+            <tr><td>Film full length or from the waist up</td><td>Cropping off your head or feet</td></tr>
+            <tr><td>Vertical 9:16, 5–<span data-max-seconds>10</span> seconds</td><td>Long or horizontal videos: we only use the first <span data-max-seconds>10</span> seconds</td></tr>
+            <tr><td>Upload the original file from your phone’s camera</td><td>A video re-downloaded from TikTok or Instagram: it’s compressed, small and has their logo</td></tr>
+            <tr><td>Smooth moves: gestures, walking, dancing</td><td>Sharp spins with your back to the camera, jumps</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Build each scene in three beats:</p>
+      <ol class="steps-list">
+        <li><strong>Action right away.</strong> No intro: the first second decides whether people keep watching.</li>
+        <li><strong>The signature gesture</strong> in the middle.</li>
+        <li><strong>An unexpected twist</strong> at the end.</li>
+      </ol>
+    </section>
+
+    <section class="guide-block" id="make" aria-labelledby="makeTitle">
+      <h2 id="makeTitle">3. Make the video</h2>
+      <ol class="steps-list">
+        <li>On the AI video tab, pick a character.</li>
+        <li>Upload your clip.</li>
+        <li>Tick the box confirming that the video shows only you or people who agreed to it.</li>
+        <li>Click “Create video”.</li>
+      </ol>
+      <p>Generation usually takes a few minutes. You can keep the page open, and if you close it, the video will wait for you on the Account tab.</p>
+      <p>What you get:</p>
+      <ul class="checklist">
+        <li>your own sound and background;</li>
+        <li>a clean file with no watermarks or logos;</li>
+        <li>a file you can download for about <span data-keep-hours>24</span> hours.</li>
+      </ul>
+      <p>If the AI couldn’t handle the video, reshoot the scene using the tips above and try again.</p>
+    </section>
+
+    <section class="guide-block" id="series" aria-labelledby="seriesTitle">
+      <h2 id="seriesTitle">4. Build a series, not a single video</h2>
+      <p>One viral video is luck, a series is a strategy. Start with ten short scenes with one character and post them over a couple of weeks.</p>
+      <div class="table-wrap">
+        <table class="info-table">
+          <thead><tr><th>Scene</th><th>Place</th><th>Everyday situation</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Kitchen</td><td>Morning coffee goes wrong</td></tr>
+            <tr><td>2</td><td>Elevator</td><td>A stranger presses every button</td></tr>
+            <tr><td>3</td><td>Shop</td><td>The queue that never moves</td></tr>
+            <tr><td>4</td><td>Yard</td><td>The neighbor’s car alarm, again</td></tr>
+            <tr><td>5</td><td>Couch</td><td>The phone battery dies at 1%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="checklist">
+        <li><strong>Film in batches.</strong> Set aside one day and film all ten scenes: it’s easier to keep the look and light the same.</li>
+        <li><strong>Change the place, not the character.</strong> The character and the gesture stay the same.</li>
+        <li><strong>Keep an ideas list.</strong> Every everyday situation that annoys or amuses you is a ready scene.</li>
+        <li><strong>Add a second character later.</strong> Characters can “answer” each other in neighboring videos, and that creates a story people follow.</li>
+      </ul>
+    </section>
+
+    <section class="guide-block" id="publish" aria-labelledby="publishTitle">
+      <h2 id="publishTitle">5. Post</h2>
+      <ul class="checklist">
+        <li><strong>A separate account for the character</strong> with the same name and avatar on TikTok, Instagram, YouTube Shorts and X. In the bio, say honestly that the character is fictional and made with AI.</li>
+        <li><strong>Post regularly.</strong> One video a day beats ten in one evening followed by a silent week.</li>
+        <li><strong>Keep captions short:</strong> the character’s name and the point of the scene. Ready captions for our characters are below.</li>
+        <li><strong>Mark the video as AI-generated when you post it.</strong> The platforms require it for realistic AI videos, and unmarked ones may be hidden or the account blocked.</li>
+      </ul>
+      <p>Every platform also asks you to mark AI content when posting. The setting names change from time to time; this is where to look:</p>
+      <div class="table-wrap">
+        <table class="info-table">
+          <thead><tr><th>Platform</th><th>Where to mark AI content</th></tr></thead>
+          <tbody>
+            <tr><td>TikTok</td><td>Post settings: the AI-generated content toggle</td></tr>
+            <tr><td>Instagram</td><td>Before sharing, under advanced settings: the AI label</td></tr>
+            <tr><td>YouTube Shorts</td><td>When uploading: answer “Yes” to the altered or synthetic content question</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="guide-block" id="numbers" aria-labelledby="numbersTitle">
+      <h2 id="numbersTitle">6. Watch the right numbers</h2>
+      <p>Likes are misleading. Three numbers matter more, because they answer the main question: do viewers want the next episode?</p>
+      <div class="table-wrap">
+        <table class="info-table">
+          <thead><tr><th>Number</th><th>What it tells you</th><th>If it’s low</th></tr></thead>
+          <tbody>
+            <tr><td>Watched to the end</td><td>Whether the scene holds attention</td><td>Start with the action right away and cut the video shorter</td></tr>
+            <tr><td>Shares</td><td>Whether the joke is worth sending to a friend</td><td>Make the twist at the end stronger</td></tr>
+            <tr><td>Profile visits and follows</td><td>Whether people want more of this character</td><td>Make the profile clearer: who the character is and what comes next</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="guide-block" id="money" aria-labelledby="moneyTitle">
+      <h2 id="moneyTitle">7. How to earn from it</h2>
+      <p>Money comes once the character has a steady audience. These are the real options:</p>
+      <div class="table-wrap">
+        <table class="info-table">
+          <thead><tr><th>Option</th><th>How it works</th><th>When it fits</th></tr></thead>
+          <tbody>
+            <tr><td>Brand deals</td><td>A brand pays for a scene with its product</td><td>Brands like characters: they don’t get tired, don’t get into scandals and always stay in character</td></tr>
+            <tr><td>Platform payouts</td><td>TikTok and YouTube share revenue with creators</td><td>Once you meet the program’s requirements; check each platform’s rules</td></tr>
+            <tr><td>Custom videos</td><td>A local café or shop orders a series with your character</td><td>Instead of a regular ad, even with a small audience</td></tr>
+            <tr><td>Merch and licensing</td><td>Stickers, T-shirts, selling rights to the look</td><td>When the character is well known</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">An honest word about risks: most pages don’t take off with the first series, and there’s no fast, guaranteed money here. Stay away from offers to launch a “character token” or a memecoin: such schemes often turn out to deceive followers and cause trouble for the creator.</p>
+    </section>
+
+    <section class="guide-block" id="scenes" aria-labelledby="scenesTitle">
+      <h2 id="scenesTitle">Ready scenes and captions</h2>
+      <p>Pick a character, repeat their gesture and act out one of the scenes. You can copy the caption and paste it into your post.</p>
+      <div class="scene-list" id="sceneList"></div>
+    </section>
+
+    <section class="guide-block" id="mistakes" aria-labelledby="mistakesTitle">
+      <h2 id="mistakesTitle">Troubleshooting</h2>
+      <div class="table-wrap">
+        <table class="info-table">
+          <thead><tr><th>Problem</th><th>Likely cause</th><th>What to do</th></tr></thead>
+          <tbody>
+            <tr><td>The character looks blurry</td><td>You filmed against a window and your face is in shadow</td><td>Turn to face the light</td></tr>
+            <tr><td>The character “floats”</td><td>A handheld, shaky phone</td><td>Put the phone on a stand</td></tr>
+            <tr><td>Strange or blurry fingers</td><td>Fast hand moves, gloves, hands at the edge of the frame or a small, compressed video</td><td>Keep your hands in the frame and move them a bit slower, take the gloves off, upload the original camera file</td></tr>
+            <tr><td>The wrong person was replaced</td><td>Someone else walked into the frame</td><td>Film alone</td></tr>
+            <tr><td>The AI didn’t accept the video</td><td>The video is shorter than 2 seconds or you face away for too long</td><td>Film 5–10 seconds facing the camera</td></tr>
+            <tr><td>“fal.ai rejected your key”</td><td>The key was copied partly or revoked</td><td>Create a new key and paste it on the Account tab</td></tr>
+            <tr><td>“Your fal.ai balance has run out”</td><td>No credit left on fal.ai</td><td>Top up under Billing on fal.ai</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Still have questions? Check the <a href="/help">Help</a> tab.</p>
+    </section>
+
+    <div class="guide-cta">
+      <p>Ready to film your first scene?</p>
+      <a class="button button-bulb" href="/">Create a video</a>
+    </div>
+    </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="Masquerade, home">
+          <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+            <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+            <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+            <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+          </svg>
+          <span>Masquerade</span>
+        </a>
+        <p>All characters are fictional. Mark your videos as AI-generated when you post them. Don’t upload other people’s videos without the consent of everyone in them.</p>
+      </div>
+      <nav class="footer-links" aria-label="Documents">
+        <a href="/guide">Guide</a>
+        <a href="/help">Help</a>
+        <a href="/terms">Rules</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

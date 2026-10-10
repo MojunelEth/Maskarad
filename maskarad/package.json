@@ -1,0 +1,18 @@
+{
+  "name": "maskarad",
+  "version": "5.0.0",
+  "private": true,
+  "description": "Masquerade: free AI character video site in English, every user pays fal.ai with their own key",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "dev": "node --disable-warning=ExperimentalWarning --env-file=.env server.js",
+    "characters": "node scripts/generate-characters.js",
+    "test": "node scripts/smoke-test.js && node scripts/fal-contract-test.js && node --disable-warning=ExperimentalWarning scripts/accounts-test.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "license": "UNLICENSED"
+}

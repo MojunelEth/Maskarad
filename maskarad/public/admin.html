@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Masquerade</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#050506">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/inter-display-800.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/admin.js" defer></script>
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Masquerade, home">
+        <svg class="brand-mark" viewBox="0 0 48 28" aria-hidden="true">
+          <path d="M4 6c8-4 14-2 20 3 6-5 12-7 20-3 0 10-5 18-12 18-4 0-6-3-8-6-2 3-4 6-8 6C9 24 4 16 4 6Z" fill="currentColor"/>
+          <ellipse class="brand-eye" cx="15" cy="12" rx="4.5" ry="3"/>
+          <ellipse class="brand-eye" cx="33" cy="12" rx="4.5" ry="3"/>
+        </svg>
+        <span>Masquerade</span>
+      </a>
+    </div>
+  </header>
+  <main class="page admin">
+    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Owner only</p>
+    <h1>Admin</h1>
+
+    <form class="admin-row" id="loginForm">
+      <div class="field">
+        <label for="token">Admin token (ADMIN_TOKEN)</label>
+        <input type="password" id="token" autocomplete="current-password">
+      </div>
+      <button class="button button-bulb button-small" type="submit">Sign in</button>
+    </form>
+    <p class="alert" id="adminAlert" role="alert" hidden></p>
+
+    <div id="panel" hidden>
+      <h2>Overview</h2>
+      <div class="stat-grid" id="stats"></div>
+
+      <h2>Support messages</h2>
+      <div class="list" id="support"></div>
+
+      <h2>User</h2>
+      <form class="admin-row" id="userForm">
+        <div class="field">
+          <label for="userEmail">User email</label>
+          <input type="email" id="userEmail" autocomplete="off">
+        </div>
+        <button class="button button-ghost button-small" type="submit">Find</button>
+      </form>
+      <div id="userCard" hidden>
+        <p id="userInfo"></p>
+        <p><button type="button" class="link-button" id="resetPassword">Issue a temporary password</button></p>
+        <p class="helper" id="userStatus" aria-live="polite"></p>
+        <div class="list" id="userHistory"></div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
