@@ -1,0 +1,46 @@
+# Service description for Render (New → Blueprint).
+services:
+  - type: web
+    name: maskarad
+    runtime: docker
+    # Accounts need a persistent disk, which only paid plans have (starter is about $7 a month)
+    plan: starter
+    healthCheckPath: /healthz
+    disk:
+      name: data
+      mountPath: /var/data
+      # Database, character photos and finished videos from the last day. A disk costs about $0.25 per GB a month
+      sizeGB: 5
+    envVars:
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: OWNER_NAME
+        sync: false
+      - key: OWNER_EMAIL
+        sync: false
+      - key: DB_PATH
+        value: /var/data/maskarad.db
+      - key: PHOTOS_DIR
+        value: /var/data/characters
+      - key: DATA_DIR
+        value: /var/data/work
+      - key: KEEP_RESULTS_MINUTES
+        value: "1440"
+      - key: MODEL
+        value: wan
+      - key: RESOLUTION
+        value: 720p
+      - key: INPUT_FPS
+        value: "24"
+      - key: MAX_SECONDS
+        value: "10"
+      - key: MAX_UPLOAD_MB
+        value: "100"
+      - key: MAX_ACTIVE_JOBS
+        value: "10"
+      - key: MAX_FFMPEG
+        value: "2"
+      - key: MAX_CUSTOM_CHARACTERS
+        value: "6"
+      - key: CHARACTER_GENERATIONS_PER_DAY
+        value: "10"
